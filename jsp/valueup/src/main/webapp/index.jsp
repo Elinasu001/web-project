@@ -6,10 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <jsp:include page="/WEB-INF\views\include\head.jsp"/>
-<!-- main css -->
-<link rel="stylesheet" href="assets/css/ui/com/main.css"/>
-<!-- main script -->
-<script type="text/javascript"  src="../valueup/assets/js/ui/com/fullpage.js"></script>
 <title>valueup</title>
 </head>
 

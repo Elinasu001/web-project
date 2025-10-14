@@ -19,7 +19,7 @@
         		<c:when test="${empty sessionScope.userInfo}">
 		            <div class="auth-links">
 		                <a href="/vp/login.fw" class="btn-login line">로그인</a>
-		                <a href="/vp/join" class="btn-signup">회원가입</a>
+		                <a href="/vp/join.fw" class="btn-signup">회원가입</a>
 		            </div>
 	            </c:when>
 	            <c:otherwise>
@@ -121,7 +121,7 @@
 	        		<c:when test="${empty sessionScope.userInfo}">
 			            <div class="auth-links">
 			                <a href="/vp/login.fw" class="btn-login line">로그인</a>
-			                <a href="/vp/join" class="btn-signup">회원가입</a>
+			                <a href="/vp/join.fw" class="btn-signup">회원가입</a>
 			            </div>
 		            </c:when>
 		            <c:otherwise>

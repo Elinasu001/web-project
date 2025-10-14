@@ -51,7 +51,7 @@ input.form-control:valid,
 /*---------------------------------------------
 	#인풋 패딩/마진
 ---------------------------------------------*/
-.form-group > label { display:inline-block; margin:10px 0; }
+.form-group > label { display:inline-block; margin:16px 0; }
 input.form-control { padding:0 15px; }
 textarea:valid { padding:10px; }
 .feedback { margin:5px 0; }

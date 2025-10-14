@@ -10,9 +10,9 @@
 </head>
 
 <body>
-<div id="wrap">
+<div id="wrap" class="login">
 	<jsp:include page="/WEB-INF/views/include/inc_header.jsp"/>
- 	<div class="contentWrap login">
+ 	<div class="contentWrap">
            <div class="contArea">
                <div class="loginArea">
                    <form action="login">

@@ -1,8 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
+<!-- main css -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/ui/com/main.css"/>
+<!-- main script -->
+<script type="text/javascript"  src="${pageContext.request.contextPath}/assets/js/ui/com/fullpage.js"></script>
 
 <div id="full-container">
    <div class="section" id="firstPage">
@@ -94,3 +96,5 @@
 </div>
 
 <ul id="pagination"></ul>
+
+<button id="scrollToTopBtn" title="맨 위로">↑</button>

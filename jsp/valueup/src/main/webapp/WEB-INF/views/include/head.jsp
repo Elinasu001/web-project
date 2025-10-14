@@ -26,7 +26,7 @@
 <script type="text/javascript"  src="assets/js/ui/com/animation.js"></script>
 <script type="module" src="${pageContext.request.contextPath}/assets/js/ui/com/fake_select.js"></script>
 <script type="module" src="${pageContext.request.contextPath}/assets/js/ui/com/popup.js"></script>
-<script type="text/javascript"  src="assets/js/ui/com/scrollTopBtn.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/ui/com/scrollTopBtn.js"></script>
 
 <!-- plugin script -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/lib/jquery-1.12.4.js"></script>
