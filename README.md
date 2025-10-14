@@ -1,1 +1,1 @@
-valueUp project
+valueup project
