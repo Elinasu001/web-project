@@ -9,7 +9,7 @@ import com.su.member.model.vo.Member;
 public class MemberService {
 	private MemberDao md = new MemberDao();
 	
-	
+	// 로그인
 	public Member login(Member member) {
 		
 		SqlSession sqlSession = Template.getSqlSession();
@@ -20,6 +20,51 @@ public class MemberService {
 		
 		return loginMember;
 		
+	}
+	
+	// 아이디 검증 로직
+	// 분리된 로직은 원래 다른 페이지로 ! 일단, 이 페이지로 진행
+	public void validateMember(Member member) {
+		// ★★★★★★★★★
+		// [ 아이디 검증 로직 ]
+		// 아이디 : 값이 없거나 space 로 들어 올 경우
+		if(member.getUserId() == null || member.getUserId().trim().isEmpty()) {
+			return;
+		}
+		// 아이디 :  값이 있는데 문자로 들어올 경우
+		String pattern = "^[a-zA-Z0-9] {4,20}$";
+		
+		if(!member.getUserId().matches(pattern)) {
+			return;
+		}
+	}
+	
+	// 회원가입
+	public int signUp(Member member) {
+		
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		int result = md.signUp(sqlSession, member);
+		
+		if(result > 0) {
+			sqlSession.commit();
+		}
+		
+		sqlSession.close();
+		
+		return result;
+	}
+	
+	// 아이디 중복체크
+	public String checkId(String id) {
+		
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		String result = md.checkId(sqlSession, id);
+		
+		sqlSession.close();
+		
+		return result;
 	}
 	
 }

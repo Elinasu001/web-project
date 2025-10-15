@@ -18,13 +18,13 @@
         	<c:choose>
         		<c:when test="${empty sessionScope.userInfo}">
 		            <div class="auth-links">
-		                <a href="/vp/login.fw" class="btn-login line">로그인</a>
-		                <a href="/vp/join.fw" class="btn-signup">회원가입</a>
+		                <a href="loginForm.mb" class="btn-login line">로그인</a>
+		                <a href="signUpForm.mb" class="btn-signup">회원가입</a>
 		            </div>
 	            </c:when>
 	            <c:otherwise>
 		            <div class="auth-links">
-		                <a href="/vp/logout" class="btn-login line" onclick="return confirm('로그아웃하시겠습니까?')">로그아웃</a>
+		                <a href="logout.mb" class="btn-login line" onclick="return confirm('로그아웃하시겠습니까?')">로그아웃</a>
 		                <a href="#signup" class="btn-signup">내정보</a>
 		            </div>
 	            </c:otherwise>
@@ -120,13 +120,13 @@
 	             <c:choose>
 	        		<c:when test="${empty sessionScope.userInfo}">
 			            <div class="auth-links">
-			                <a href="/vp/login.fw" class="btn-login line">로그인</a>
-			                <a href="/vp/join.fw" class="btn-signup">회원가입</a>
+			                <a href="loginForm.mb" class="btn-login line">로그인</a>
+			                <a href="signUpForm.mb" class="btn-signup">회원가입</a>
 			            </div>
 		            </c:when>
 		            <c:otherwise>
 			            <div class="auth-links">
-			                <a href="/vp/logout" class="btn-login line" onclick="return confirm('로그아웃하시겠습니까?')">로그아웃</a>
+			                <a href="logout.mb" class="btn-login line" onclick="return confirm('로그아웃하시겠습니까?')">로그아웃</a>
 			                <a href="#signup" class="btn-signup">내정보</a>
 			            </div>
 		            </c:otherwise>

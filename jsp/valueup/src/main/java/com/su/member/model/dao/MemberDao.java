@@ -6,8 +6,19 @@ import com.su.member.model.vo.Member;
 
 public class MemberDao {
 	
+	// 로그인
 	public Member login(SqlSession sqlSession, Member member) {
 		return sqlSession.selectOne("memberMapper.login", member);
+	}
+	
+	// 회원가입
+	public int signUp(SqlSession sqlSession, Member member) {
+		return sqlSession.insert("memberMapper.signUp", member);
+	}
+	
+	// 아이디 중복체크 
+	public String checkId(SqlSession sqlSession, String id) {
+		return sqlSession.selectOne("memberMapper.checkId", id);
 	}
 	
 }

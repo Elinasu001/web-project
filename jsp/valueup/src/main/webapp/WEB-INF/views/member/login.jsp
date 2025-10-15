@@ -15,7 +15,7 @@
  	<div class="contentWrap">
            <div class="contArea">
                <div class="loginArea">
-                   <form action="login">
+                   <form action="login.mb">
                        <div class="form-wrap">
                            <h3><img src="${pageContext.request.contextPath}/assets/images/Icon.png" class="upicon">로그인<span class="flag">Admin</span></h3>
                            <div class="form-group mt30 "><!-- user-invalid -->
