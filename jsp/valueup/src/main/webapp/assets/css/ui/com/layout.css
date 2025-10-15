@@ -23,7 +23,7 @@ body { position: relative; -webkit-text-size-adjust: none; }
 #wrap.join .contentWrap
 {justify-content:center; }
 
-#wrap.join {height:auto;}
+#wrap.join {height:100%;}
 
 
 /*---------------------------------------------
