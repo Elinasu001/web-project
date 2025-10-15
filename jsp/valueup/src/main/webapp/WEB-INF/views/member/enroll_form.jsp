@@ -15,31 +15,31 @@
  	<div class="contentWrap">
         <div class="contArea">
             <div class="loginArea">
-                <form action="signUp">
+                <form action="join">
                     <div class="form-wrap">
                         <h3><img src="${pageContext.request.contextPath}/assets/images/Icon.png" class="upicon">회원가입</h3>
                         <div class="form-group"><!-- user-invalid -->
-                            <label for="userId" class="essential">아이디</label>
+                            <label for="userId">아이디</label>
                             <input id="userId" type="text" name="userId" maxlength="14" required class="form-control" placeholder="아이디">
                             <p class="feedback">아이디를 입력해주세요</p>
                         </div>
                         <div class="form-group"><!-- user-invalid -->
-                            <label for="userPwd" class="essential">비밀번호</label>
+                            <label for="userPwd">비밀번호</label>
                             <input id="userPwd" type="password" name="userPwd" size="17" maxlength="30" class="form-control" placeholder="비밀번호">
                             <p class="feedback">비밀번호를 입력해주세요</p>
                         </div>
                         <div class="form-group"><!-- user-invalid -->
-                            <label for="userPwdChk" class="essential">비밀번호 재확인</label>
+                            <label for="userPwdChk">비밀번호 재확인</label>
                             <input id="userPwdChk" type="password" size="17" maxlength="30" required  class="form-control" placeholder="비밀번호 재확인">
                             <p class="feedback">비밀번호 재확인해주세요</p>
                         </div>
                         <div class="form-group"><!-- user-invalid -->
-                            <label for="userName" class="essential">이름</label>
+                            <label for="userName">이름</label>
                             <input id="userName" type="text" name="userName" required class="form-control" placeholder="이름">
                             <p class="feedback">이름를 입력해주세요</p>
                         </div>
                         <div class="form-group"><!-- user-invalid -->
-                            <label for="userEmail" class="essential">이메일</label>
+                            <label for="userEmail">이메일</label>
                             <input id="userEmail" type="email" name="email" required class="form-control" placeholder="이메일">
                             <p class="feedback">이메일를 입력해주세요</p>
                         </div>
