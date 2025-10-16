@@ -1,11 +1,14 @@
 package com.su.board.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.su.breacrumb.common.BreadcrumbUtil;
 
 @WebServlet("*.bo")
 public class BoardFrontController extends HttpServlet {
@@ -21,10 +24,15 @@ public class BoardFrontController extends HttpServlet {
 		
 		String mapping = uri.substring(uri.lastIndexOf("/") + 1, uri.lastIndexOf("."));
 		
+		BoardController bc = new BoardController();
+		
 		String view = "";
 		
 		switch(mapping) {
-	    case "boards": view = mc.boards(request, response); break;
+	    case "boards": 
+	    	view = bc.boards(request, response); 
+	    	BreadcrumbUtil.setBreadcrumb(request, "boards");
+	    	break;
 		}
 		
 		

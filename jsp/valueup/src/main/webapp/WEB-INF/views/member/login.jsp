@@ -14,10 +14,11 @@
 	<jsp:include page="/WEB-INF/views/include/inc_header.jsp"/>
  	<div class="contentWrap">
            <div class="contArea">
+           <jsp:include page="/WEB-INF/views/include/inc_breadcrumb.jsp"/>
                <div class="loginArea">
                    <form action="login.mb">
                        <div class="form-wrap">
-                           <h3><img src="${pageContext.request.contextPath}/assets/images/Icon.png" class="upicon">로그인<span class="flag">Admin</span></h3>
+                           <h3><img src="${pageContext.request.contextPath}/assets/images/Icon.png" class="upicon">로그인<!-- <span class="flag">Admin</span> --></h3>
                            <div class="form-group mt30 "><!-- user-invalid -->
                                <input id="userId" type="text" name="userId" maxlength="14" required class="form-control" placeholder="아이디">
                                <p class="feedback">아이디를 입력해주세요</p>

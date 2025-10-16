@@ -43,43 +43,38 @@
             <ul class="menu-list" role="menubar">
                 
                 <li class="menu-item" role="none">
-                    <a href="#secondPage" role="menuitem" aria-haspopup="true" aria-expanded="false">공지사항</a>
-                    <div class="menu-sub" role="menu" aria-label="공지사항 하위메뉴">
+                    <a href="#secondPage" role="menuitem" aria-haspopup="true" aria-expanded="false">회사소개</a>
+                    <div class="menu-sub" role="menu" aria-label="회사소개 하위메뉴">
                         <ul>
-                            <li><a href="#">공지사항 등록</a></li>
-                            <li><a href="#">공지사항 목록조회</a></li>
-                            <li><a href="#">공지사항 수정/삭제</a></li>
+                            <li><a href="#">인사말</a></li>
+                            <li><a href="#">연혁</a></li>
+                            <li><a href="#">오시는길 </a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="menu-item" role="none">
-                    <a href="#thirdPage" role="menuitem" aria-haspopup="true" aria-expanded="false">일반게시판</a>
-                    <div class="menu-sub" role="menu" aria-label="일반게시판 하위메뉴">
+                    <a href="#thirdPage" role="menuitem" aria-haspopup="true" aria-expanded="false">고객지원</a>
+                    <div class="menu-sub" role="menu" aria-label="고객지원 하위메뉴">
                         <ul>
-                            <li><a href="#">게시글 작성</a></li>
-                            <li><a href="#">게시글 목록조회</a></li>
-                            <li><a href="#">게시글 수정/삭제</a></li>
+                            <li><a href="boards.bo">자유 게시판</a></li>
+                            <li><a href="#">문의하기</a></li>
                         </ul>
                     </div>
                 </li>
                 <li class="menu-item" role="none">
-                        <a href="#thirdPage" role="menuitem" aria-haspopup="true" aria-expanded="false">사진게시판</a>
-                        <div class="menu-sub" role="menu" aria-label="사진게시글 하위메뉴">
-                            <ul>
-                                <li><a href="#">사진게시글 작성</a></li>
-                                <li><a href="#">사진게시글 목록조회</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                <li class="menu-item" role="none">
-                    <a href="#firstPage" role="menuitem" aria-haspopup="true" aria-expanded="false">회원서비스</a>
-                    <div class="menu-sub" role="menu" aria-label="회원서비스 하위메뉴">
-                        <ul>
-                            <li><a href="#">내정보변경</a></li>
-                            <li><a href="#">회원탈퇴</a></li>
-                        </ul>
-                    </div>
+                    <a class="m-link" href="#">이벤트</a>
                 </li>
+                <c:if test="${!empty sessionScope.userInfo}">
+	                <li class="menu-item" role="none">
+	                    <a href="#firstPage" role="menuitem" aria-haspopup="true" aria-expanded="false">회원서비스</a>
+	                    <div class="menu-sub" role="menu" aria-label="회원서비스 하위메뉴">
+	                        <ul>
+	                            <li><a href="#">내정보변경</a></li>
+	                            <li><a href="#">회원탈퇴</a></li>
+	                        </ul>
+	                    </div>
+	                </li>
+                </c:if>
             </ul>
 
             <div class="hamburger-container">
@@ -136,35 +131,32 @@
          </div>
          <ul style="list-style:none; margin:0; padding:0">
                 <li class="m-acc">
-                    <button class="m-acc-btn" aria-expanded="false">공지사항</button>
-                    <div class="m-acc-panel m-sub">
-                        <a href="#">공지사항 등록</a>
-                        <a href="#">공지사항 목록조회</a>
-                        <a href="#">공지사항 수정/삭제</a>
+                    <button class="m-acc-btn" aria-expanded="false">회사소개</button>
+                    <div class="m-acc-panel m-sub" aria-label="회사소개 하위메뉴">
+                        <a href="#">인사말</a>
+                        <a href="#">연혁</a>
+                        <a href="#">오시는 길</a>
                     </div>
                 </li>
                 <li class="m-acc">
-                    <button class="m-acc-btn" aria-expanded="false">일반게시판</button>
-                    <div class="m-acc-panel m-sub">
-                        <a href="#">게시글 작성</a>
-                        <a href="#">게시글 목록조회</a>
-                        <a href="#">게시글 수정/삭제</a>
+                    <button class="m-acc-btn" aria-expanded="false">고객지원</button>
+                    <div class="m-acc-panel m-sub" aria-label="고객지원 하위메뉴">
+                        <a href="boards.bo">자유 게시판</a>
+                        <a href="#">문의하기</a>
                     </div>
                 </li>
                 <li class="m-acc">
-                    <button class="m-acc-btn" aria-expanded="false">사진게시판</button>
-                    <div class="m-acc-panel m-sub">
-                        <a href="#">사진게시글 작성</a>
-                        <a href="#">사진게시글 목록조회</a>
-                    </div>
+                    <a class="m-link" href="#">이벤트</a>
                 </li>
+                <c:if test="${!empty sessionScope.userInfo}">
                 <li class="m-acc">
                     <button class="m-acc-btn" aria-expanded="false">회원서비스</button>
-                    <div class="m-acc-panel m-sub">
+                    <div class="m-acc-panel m-sub" aria-label="회원서비스 하위메뉴">
                         <a href="#">내정보 변경</a>
                         <a href="#">회원탈퇴</a>
                     </div>
                 </li>
+                </c:if>
             </ul>
         </nav>
     </div>

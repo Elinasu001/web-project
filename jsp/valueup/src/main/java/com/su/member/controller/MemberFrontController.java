@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.su.breacrumb.common.BreadcrumbUtil;
+
 @WebServlet("*.mb")
 public class MemberFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -26,11 +28,23 @@ public class MemberFrontController extends HttpServlet {
 		
 		String view = "";
 		switch(mapping) {
-	    case "loginForm": view = mc.loginForm(request, response); break;
-	    case "login": view = mc.login(request, response); break;
-	    case "logout": view = mc.logout(request, response); break;
-	    case "signUpForm": view = mc.signUpForm(request, response); break;
-	    case "signUp": view = mc.signUp(request, response); break;
+	    case "loginForm": 
+	    	view = mc.loginForm(request, response); 
+	    	BreadcrumbUtil.setBreadcrumb(request, "login");
+	    	break;
+	    case "login": 
+	    	view = mc.login(request, response);
+	    break;
+	    case "logout": 
+	    	view = mc.logout(request, response); 
+	    	break;
+	    case "signUpForm": 
+	    	view = mc.signUpForm(request, response); 
+	    	BreadcrumbUtil.setBreadcrumb(request, "signup");
+	    break;
+	    case "signUp": 
+	    	view = mc.signUp(request, response); 
+	    	break;
 		}
 		
 	    if (view != null) {

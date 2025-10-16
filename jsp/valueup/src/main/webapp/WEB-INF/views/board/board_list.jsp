@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <jsp:include page="/WEB-INF\views\include\head.jsp"/>
-<title>로그인</title>
+<title>게시판</title>
 </head>
 
 <body>
@@ -14,33 +14,33 @@
 	<jsp:include page="/WEB-INF/views/include/inc_header.jsp"/>
  	<div class="contentWrap">
 	     <div class="contArea">
+	     	<jsp:include page="/WEB-INF/views/include/inc_breadcrumb.jsp"/>
 	         <div class="inner">
-	             <h2 class="sec-tit"><img src="../../assets/images/Icon.png" class="upicon">자유 게시판</h2>
+	             <h2 class="sec-tit"><img src="${pageContext.request.contextPath}/assets/images/Icon.png" class="upicon">자유 게시판</h2>
 	             
 	             <div class="form-group mt60 searchBd">
 	                 <div class="flex-row gap5">
 	                     <div class="col col-4">
 	                         <div id="phn-first" class="se-select" data-stove="select" data-uicase="slide">
-	                             <div class="e-hidden-title">TITLE</div>
+	                             <div class="e-hidden-title">카테고리</div>
 	                             <select required="" title="">
-	                                 <option value="" hidden="">안녕</option>
-	                                 <option value="0">000</option>
-	                                 <option value="1">111</option>
-	                                 <option value="2">222</option>
-	                                 <option value="3">333</option>
-	                                 <option value="4">444</option>
+	                                 <option value="" hidden="">카테고리</option>
+	                                 <option value="0">작성자</option>
+	                                 <option value="1">내용</option>
+	                                 <option value="2">제목</option>
 	                             </select>
 	                         </div>
 	                     </div>
 	                     <div class="col">
-	                         <input id="search-input" type="text" class="form-control ipt-pd-r" placeholder="입력해주세요">
-	                         <span class="ipt-right ico flex-row gap10"><button type="reset" class="btn btn-ipt-clear"><span class="sr-only">삭제버튼</span></button><button type="button" class="btn btn-ipt-search"><span class="sr-only">검색버튼</span></button></span>
+	                         <input id="search-input" type="text" class="form-control ipt-pd-r" name="quesy" value="${ keyword }" placeholder="입력해주세요">
+	                         <span class="ipt-right ico flex-row gap10"><button type="reset" class="btn btn-ipt-clear"><span class="sr-only">삭제버튼</span></button><button type="submit" class="btn btn-ipt-search"><span class="sr-only">검색버튼</span></button></span>
+	                     	 <input type="hidden" name="page" value="1"/>
 	                     </div>
 	                 </div>
 	             </div>
 	             
 	             <div class="btn-sec mt30">
-	                 <button class="btn-sm">글쓰기</button>
+	                 <button id="goEnrollForm" class="btn-sm">글쓰기</button>
 	             </div>
 	             <div class="table-wrap">
 	                 <div class="table-type1 ft-sticky">
@@ -65,70 +65,16 @@
 	                             </tr>
 	                         </thead>
 	                         <tbody>
-	                             <tr>
-	                                 <td>43</td>
-	                                 <td>css</td>
-	                                 <td>망아지3</td>
-	                                 <td>가가가가가가가</td>
-	                                 <td>2025-10-01</td>
-	                                 <td>10</td>
-	                             </tr>
-	                             <tr>
-	                                 <td>43</td>
-	                                 <td>css</td>
-	                                 <td>망아지3</td>
-	                                 <td>가가가가가가가</td>
-	                                 <td>2025-10-01</td>
-	                                 <td>10</td>
-	                             </tr>
-	                             <tr>
-	                                 <td>43</td>
-	                                 <td>css</td>
-	                                 <td>망아지3</td>
-	                                 <td>가가가가가가가</td>
-	                                 <td>2025-10-01</td>
-	                                 <td>10</td>
-	                             </tr>
-	                             <tr>
-	                                 <td>43</td>
-	                                 <td>css</td>
-	                                 <td>망아지3</td>
-	                                 <td>가가가가가가가</td>
-	                                 <td>2025-10-01</td>
-	                                 <td>10</td>
-	                             </tr>
-	                             <tr>
-	                                 <td>43</td>
-	                                 <td>css</td>
-	                                 <td>망아지3</td>
-	                                 <td>가가가가가가가</td>
-	                                 <td>2025-10-01</td>
-	                                 <td>10</td>
-	                             </tr>
-	                             <tr>
-	                                 <td>43</td>
-	                                 <td>css</td>
-	                                 <td>망아지3</td>
-	                                 <td>가가가가가가가</td>
-	                                 <td>2025-10-01</td>
-	                                 <td>10</td>
-	                             </tr>
-	                             <tr>
-	                                 <td>43</td>
-	                                 <td>css</td>
-	                                 <td>망아지3</td>
-	                                 <td>가가가가가가가</td>
-	                                 <td>2025-10-01</td>
-	                                 <td>10</td>
-	                             </tr>
-	                             <tr>
-	                                 <td>43</td>
-	                                 <td>css</td>
-	                                 <td>망아지3</td>
-	                                 <td>가가가가가가가</td>
-	                                 <td>2025-10-01</td>
-	                                 <td>10</td>
-	                             </tr>
+	                             <c:forEach var="board" items="${ boards }">
+									<tr id="${ board.boardNo }" class="board">
+										<td>${ board.boardNo }</td>
+										<td>${ board.category }</td>
+										<td>${ board.boardWriter }</td>
+										<td >${ board.boardTitle }</td>
+										<td>${ board.createDate }</td>
+										<td>${ board.count }</td>
+									</tr>
+								</c:forEach>
 	                         </tbody>
 	                     </table>
 	                 </div>
@@ -151,5 +97,20 @@
 	<jsp:include page="/WEB-INF/views/include/inc_footer.jsp"/>
 </div>
 </body>
+
+<script>
+$(function(){
+	 $(".board").click(e => {
+	 	console.log(e.currentTarget.id);
+	 	const targetId = e.currentTarget.id;
+	 	location.href = `detail.board?boardNo=\${targetId}`;
+	 });
+	 
+	 $("#goEnrollForm").click(e => {
+        console.log("글쓰기 버튼 클릭");
+        location.href = "enrollForm.board";
+    });
+ });
+</script>
 </html>
 

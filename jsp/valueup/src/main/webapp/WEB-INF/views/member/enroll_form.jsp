@@ -14,6 +14,7 @@
 	<jsp:include page="/WEB-INF/views/include/inc_header.jsp"/>
  	<div class="contentWrap">
         <div class="contArea">
+        	<jsp:include page="/WEB-INF/views/include/inc_breadcrumb.jsp"/>
             <div class="loginArea">
                 <form action="signUp.mb" method="post">
                     <div class="form-wrap">

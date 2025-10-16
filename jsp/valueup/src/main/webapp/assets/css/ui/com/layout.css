@@ -7,7 +7,7 @@
 ---------------------------------------------*/
 html,body { height:100%; }
 body { position: relative; -webkit-text-size-adjust: none; }
-.wrap { position: relative; margin: 0 auto; display:-webkit-box; display:-ms-flexbox; display:-webkit-flex; display:flex; -webkit-box-orient:vertical; -webkit-box-direction:normal; -ms-flex-direction:column; flex-direction: column; height:100%; /*overflow: hidden; */}
+/* .wrap { position: relative; margin: 0 auto; display:-webkit-box; display:-ms-flexbox; display:-webkit-flex; display:flex; -webkit-box-orient:vertical; -webkit-box-direction:normal; -ms-flex-direction:column; flex-direction: column; height:100%; overflow: hidden;} */
 .btmWrap { width:100%; height:auto; background-color: #F8F8F8;}
 .btmCont { height:100%; }
 .inner { max-width:1000px; }
@@ -19,13 +19,7 @@ body { position: relative; -webkit-text-size-adjust: none; }
 /*---------------------------------------------
 	#기본 레이아웃 _ 컨텐츠별
 ---------------------------------------------*/
-.wrap.login .contentWrap,
-.wrap.join .contentWrap
-{justify-content:center; }
-
-.wrap.join {height:100%;}
-
-#wrap.login .contentWrap { height: calc(100dvh - 110px); }
+#wrap {height:100dvh;}
 
 
 /*---------------------------------------------
